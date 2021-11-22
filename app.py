@@ -111,42 +111,7 @@ def save_qualifying_loans(qualifying_loans):
     # @TODO: Complete the usability dialog for savings the CSV Files.
     # YOUR CODE HERE!
 
-# created the save_csv function; next step in refining system design is moving this to the proper
-# pre-existing loan qualifier application
-    
-def save_csv(qualifying_loans, output_path):
-
-    # function description: saves all of the filtered results locally
-    # args: 
-    #   qualifying_loans (list[lists]): (has the data that needs to be saved)
-    #   ouput_path (string): location of saved csv file 
-    # returns: nothing; csv create in path
-
-    # creating a path
-
-    csvpath = Path(output_path)
-
-    # naming the header.
-
-    header = ["bank_data", "credit_score", "debt", "income", "loan_amount", "home_value"] 
-
-    # write the list of lists as a csv
-
-    with open(csvpath, "w", newline='') as csvfile:
-
-        # create a csvwriter
-
-        csvwriter = csv.writer(csvfile, delimiter=",")
-
-        # write the header to the csv file
-
-        csvwriter.writerow(header)
-
-        # write the data rows
-
-        for row in qualifying_loans:
-                csvwriter.writerow(row)
-    
+# moved the save_csv function to a pre-existing application   
     
 def run():
     """The main function for running the script."""
